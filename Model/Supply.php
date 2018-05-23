@@ -2,9 +2,9 @@
 
 require_once 'Model/Model.php';
 
-class Order extends Model
+class Supply extends Model
 {
-    const TABLE_NAME = 'order';
+    const TABLE_NAME = 'supply';
 
     public function __construct($data = [])
     {
