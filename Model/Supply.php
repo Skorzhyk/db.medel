@@ -15,17 +15,17 @@ class Supply extends Model
     protected function create()
     {
         return $this->db->query(
-            "INSERT INTO " . self::TABLE_NAME . " (status, drone_id, medicines)
-            VALUES (" . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ")",
-            [$this->getData('status'), $this->getData('drone_id'), $this->getData('medicines')]
+            "INSERT INTO " . self::TABLE_NAME . " (status, drone_id, user_id, medicines)
+            VALUES (" . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ")",
+            [$this->getData('status'), $this->getData('drone_id'), $this->getData('user_id'), $this->getData('medicines')]
         );
     }
 
     protected function update()
     {
         return $this->db->query(
-            'UPDATE ' . $this->tableName . ' SET name = ' . DataBase::SYM_QUERY . ', qty = ' . DataBase::SYM_QUERY . ' WHERE id = ' . DataBase::SYM_QUERY,
-            [$this->getData('name'), $this->getData('qty'), $this->getData('id')]
+            'UPDATE ' . $this->tableName . ' SET status = ' . DataBase::SYM_QUERY . ', drone_id = ' . DataBase::SYM_QUERY . ', user_id = ' . DataBase::SYM_QUERY . ', medicines = ' . DataBase::SYM_QUERY . ' WHERE id = ' . DataBase::SYM_QUERY,
+            [$this->getData('status'), $this->getData('drone_id'), $this->getData('user_id'), $this->getData('medicines'), $this->getData('id')]
         );
     }
 }

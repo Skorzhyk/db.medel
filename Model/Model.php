@@ -16,7 +16,7 @@ abstract class Model
         $this->data = $data;
     }
 
-    public function getData($code = null)
+    protected function getData($code = null)
     {
         if (!$code) {
             return $this->data;
@@ -29,7 +29,7 @@ abstract class Model
         return null;
     }
 
-    public function setData($code, $value)
+    protected function setData($code, $value)
     {
         $this->data[$code] = $value;
     }
@@ -50,11 +50,11 @@ abstract class Model
         return $this->getData();
     }
 
-    public function getAll()
+    public function all()
     {
         return $this->db->select(
             'SELECT * FROM ' . $this->tableName,
-            [$this->getData('id')]
+            []
         );
     }
 
@@ -67,6 +67,14 @@ abstract class Model
         $this->get();
 
         return $this->update();
+    }
+
+    public function delete()
+    {
+        $this->db->query(
+            "DELETE FROM " . $this->tableName . " WHERE id = " . DataBase::SYM_QUERY,
+            [$this->getData('id')]
+        );
     }
 
     protected function create() { return false; }
