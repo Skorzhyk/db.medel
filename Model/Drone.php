@@ -36,8 +36,7 @@ class Drone extends Model
             []
         );
 
-        return $data['id'];
-        $this->setData('status', 1);
+        $this->setData('status', 2);
         $this->setData('id', $data['id']);
         $this->save();
 

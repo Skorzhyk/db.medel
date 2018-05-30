@@ -12,6 +12,7 @@ class Api
         $engine = new $engineName($data);
 
         $response = $engine->$action();
+
         if (is_array($response)) {
             echo json_encode($response);
         } else {
