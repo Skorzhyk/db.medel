@@ -16,7 +16,7 @@ class Drone extends Model
     {
         return $this->db->query(
             'INSERT INTO ' . $this->tableName . ' (status, coords)
-            VALUES (' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY .')',
+            VALUES (' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY . ')',
             [$this->getData('status'), $this->getData('coords')]
         );
     }
@@ -32,7 +32,7 @@ class Drone extends Model
     public function apply()
     {
         $data = $this->db->selectRow(
-            'SELECT * FROM ' . $this->tableName . ' WHERE status = 0',
+            'SELECT * FROM ' . $this->tableName . ' WHERE status = 1',
             []
         );
 

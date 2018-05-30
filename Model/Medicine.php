@@ -16,7 +16,7 @@ class Medicine extends Model
     {
         return $this->db->query(
             'INSERT INTO ' . $this->tableName . ' (name, qty)
-            VALUES (' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY .')',
+            VALUES (' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY . ')',
             [$this->getData('name'), $this->getData('qty')]
         );
     }

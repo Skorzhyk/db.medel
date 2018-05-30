@@ -15,8 +15,8 @@ class User extends Model
     protected function create()
     {
         return $this->db->query(
-            "INSERT INTO " . self::TABLE_NAME . " (email, password, name)
-            VALUES (" . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ", " . DataBase::SYM_QUERY . ")",
+            'INSERT INTO ' . self::TABLE_NAME . ' (email, password, name)
+            VALUES (' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY . ', ' . DataBase::SYM_QUERY . ')',
             [$this->getData('email'), $this->getData('password'), $this->getData('name')]
         );
     }

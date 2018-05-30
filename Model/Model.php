@@ -72,7 +72,7 @@ abstract class Model
     public function delete()
     {
         $this->db->query(
-            "DELETE FROM " . $this->tableName . " WHERE id = " . DataBase::SYM_QUERY,
+            'DELETE FROM ' . $this->tableName . ' WHERE id = ' . DataBase::SYM_QUERY,
             [$this->getData('id')]
         );
     }
